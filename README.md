@@ -28,3 +28,4 @@ README.md: A comprehensive guide to the project, outlining its purpose, methodol
 
 # Visuals
 ![Screenshot Description](image1.png)
+![Screenshot Description](image2.png)
