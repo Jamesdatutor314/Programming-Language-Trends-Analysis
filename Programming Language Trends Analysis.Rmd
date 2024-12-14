@@ -1,0 +1,91 @@
+---
+title: "R Notebook"
+author: "James Weaver"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  html_notebook: default
+  word_document: default
+---
+
+# **Programming Language Trends Analysis**
+
+**Section 1: Load Necessary Libraries**
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+```
+**Section 2: Load and Preview Dataset**
+
+```{r}
+# Load the dataset
+data <- read_csv("stack_overflow_data.csv")
+```
+```{r}
+# Preview the dataset
+head(data, 5)
+```
+**Section 3: Data Transformation**
+
+```{r}
+# Calculate the percentage of questions per tag per year
+data <- data %>%
+  mutate(percentage = (num_questions / year_total) * 100)
+```
+
+**Section 4: Analyze Top Programming Languages**
+
+```{r}
+# Top Tags Analysis
+top_tags <- data %>%
+  filter(year %in% 2015:2020) %>%
+  group_by(tag) %>%
+  summarise(total = sum(num_questions)) %>%
+  arrange(desc(total)) %>%
+  head(5)
+top_tags
+```
+**Section 5: Visualize Top Programming Languages**
+
+```{r}
+# Visualize Top Tags for 2015-2020
+ggplot(top_tags, aes(x = total, y = reorder(tag, total))) +
+  geom_col(fill = "skyblue") +
+  labs(
+    title = "Top 5 Programming Languages (2015-2020)",
+    x = "Number of Questions",
+    y = "Programming Language"
+  ) +
+  theme_minimal()
+```
+**Section 6: Trend Analysis for Specific Languages**
+
+```{r}
+# Percentage Trend for a Specific Language
+plot_language_trend <- function(data, language) {
+  language_data <- data %>% filter(tag == language)
+  ggplot(language_data, aes(x = year, y = percentage)) +
+    geom_line(color = "blue") +
+    labs(
+      title = paste("Trend of", toupper(language), "Popularity Over Time"),
+      x = "Year",
+      y = "Percentage of Questions (%)"
+    ) +
+    theme_minimal()
+}
+
+plot_language_trend(data, "python")
+```
+
+**Section 7: Summary Insights**
+
+```{r}
+# Summary Insights
+cat("### Key Insights:\n")
+cat("1. Python has consistently grown in popularity, surpassing many other programming languages.\n")
+cat("2. Other languages like JavaScript remain stable, while some older languages show declining trends.\n")
+cat("3. This analysis provides insights into programming language trends to guide career and learning decisions.\n")
+```
+
