@@ -25,3 +25,6 @@ README.md: A comprehensive guide to the project, outlining its purpose, methodol
 - JavaScript continues to dominate as a versatile, stable language for front-end and back-end development.
 - Traditional languages like Java show a slight decline, indicating a potential shift towards more modern and dynamic alternatives.
 - Languages like R retain relevance in data science but are passed by Python in general purpose and applied use cases.
+
+# Visuals
+![Screenshot Description](image1.png)
