@@ -5,7 +5,7 @@ By James Weaver
 Project: Stack Overflow Data (2008–2020)
 
 # Introduction
-This project investigates trends in programming language popularity by analyzing Stack Overflow's vast dataset, which spans over a decade of user-generated questions. Leveraging R programming, the analysis identifies the relative growth and decline of languages such as Python, R, Java, and JavaScript. This work aims to provide actionable insights into the evolution of programming technologies, helping professionals decide where to focus their learning and development efforts.
+This project investigates trends in programming language popularity by analyzing Stack Overflow's dataset which spans over a decade of user-generated questions. Using R programming, the analysis identifies the relative growth and decline of languages such as Python, R, Java, and JavaScript. This work aims to provide insights into the evolution of programming technologies, helping professionals decide where to focus their learning and development efforts.
 
 # Files
 The core analysis is contained within several files that showcase data transformations, visualizations, and insights:
@@ -18,10 +18,10 @@ README.md: A comprehensive guide to the project, outlining its purpose, methodol
 - Processed a dataset spanning 2008–2020 to compute the percentage of annual questions tagged with each programming language.
 - Identified the five programming languages with the highest cumulative question counts between 2015 and 2020.
 - Visualized trends in language popularity over time using R's ggplot2 library.
-- Python emerged as the fastest-growing language, while others like R showed steady, niche growth.
+- Python emerged as the fastest-growing language, while others like R showed steady growth.
 
 # Key Insights
 - Python's popularity has surged, consistently growing over the years, reflecting its adoption in machine learning, data science, and web development.
 - JavaScript continues to dominate as a versatile, stable language for front-end and back-end development.
 - Traditional languages like Java show a slight decline, indicating a potential shift towards more modern and dynamic alternatives.
-- Languages like R retain relevance in data science but are eclipsed by Python in general-purpose and applied use cases.
+- Languages like R retain relevance in data science but are passed by Python in general purpose and applied use cases.
